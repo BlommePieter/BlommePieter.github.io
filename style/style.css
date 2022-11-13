@@ -1,0 +1,55 @@
+body {
+    background-image: url("/assets/Background.png");
+    background-repeat: no-repeat;
+}
+
+.cards {
+  width: 1920px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: start;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 75px;
+    background: linear-gradient(#EB4848 50%, white 50%);
+    height: 400px;
+    width: 400px;
+    border-color: #28333A;
+    border: solid 1px;
+    gap: 40px;
+  }
+
+  .content {
+    display: block;
+    padding-bottom: 40px;
+  }
+
+  .Type {
+    font-size: 24px;
+    font-weight: bold;
+    color: orangered;
+    display: inline;
+  }
+
+  .ImageContainer {
+    display: flex;
+    border-radius: 60px;
+    height: 150px;
+    width: 354px;
+    background-color: black;
+  }
+
+  .cover {
+    object-fit: contain;
+    height: 150px;
+    width: 354px;
+  }
+  
