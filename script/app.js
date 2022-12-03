@@ -93,10 +93,37 @@ const showPokemon = function (jsonObject) {
                 document.getElementById(card.id).style.color = "orangered";
             }
         }
+        ListenToCardClick(jsonObject);
     } catch (err) {
         console.error(err);
     }
 };
+
+const ListenToCardClick = function (jsonObject) {
+    const cards = document.querySelectorAll(".card");
+    for (const card of cards) {
+        card.addEventListener("click", function () {
+            console.log("clicked"); 
+
+            let htmlstring = "";
+            for (let pokemon of jsonObject.pokemon) {
+            if (pokemon.id == card.querySelector("p").id){
+                 htmlstring += `<a class="close" href="#">&times;</a>
+                 <div class="ImageContainer">
+               <img src="${pokemon.img}" alt="picture of ${pokemon.name}" class="cover">
+                 </div>
+                 <div class="content">
+                   <h4>Name: ${pokemon.name}</h4>
+                   <h4>Type: <p class="Type" id="js-type ${pokemon.id}">${pokemon.type}</p></h4>
+                   <h4>Weight: ${pokemon.weight}</h4>
+                   <h4>Height: ${pokemon.height}</h4>
+                   <h4>Weaknesses: ${pokemon.weaknesses}</h4>
+                 </div>`;
+            }
+    }
+    document.querySelector(".js-popup").innerHTML = htmlstring;
+    document.location.href = '#popup1';
+        })}};
 
 
 // #endregion
