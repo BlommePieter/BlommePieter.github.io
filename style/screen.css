@@ -103,7 +103,7 @@ h4,
 h5,
 h6 {
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 24px;
     margin: 0 0 24px;
 }
@@ -115,7 +115,7 @@ dl,
 table,
 address,
 figure {
-    margin: 0 0 24px;
+    margin: 0 0 1rem;
 }
 
 ul,
@@ -239,67 +239,83 @@ input::placeholder {
 #COMPONENTS
 \*------------------------------------*/
 
-  .card {
+  .c-card {
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      box-shadow: 0 0.25rem .5rem 0 rgba(0,0,0,0.2);
       transition: 0.3s;
-      border-radius: 75px;
-      background: linear-gradient(#EB4848 50%, white 50%);
-      height: 400px;
-      width: 400px;
-      border-color: #28333A;
-      border: solid 1px;
-      gap: 40px;
+      border-radius: 4.6875rem;
+      background: linear-gradient(var(--color-red) 50%, white 50%);
+      height: 25rem;
+      width: 25rem;
+      border-color: var(--color-front);
+      border: solid .0625rem;
+      gap: 2.5rem;
     }
 
-    .card:hover {
-      box-shadow: 0 8px 16px 0 rgba(90,87,87,0.8);
+    .c-card:hover {
+      box-shadow: 0 1rem 2rem 0 rgba(90,87,87,0.8);
+    }
+
+    .c-card:focus {
+      box-shadow: 0 1rem 2rem 0 rgba(90,87,87,0.8);
     }
   
-    .content {
+    .c-content {
       display: block;
-      padding-bottom: 40px;
+      padding-bottom: 2.5rem;
     }
 
-    .popup .content p {
-        font-size: 16px;
+    .c-popup .c-content p {
+        font-size: 1rem;
         font-weight: 600;
-        line-height: 24px;
-        margin: 0 0 24px;
+        line-height: 1.5rem;
+        margin: 0 0 0.5rem;
+    }
+
+    .c-content__title{
+        margin-bottom: 0;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 2rem;
     }
   
-    .Type {
-      font-size: 24px;
+    .c-Type {
+      font-size: 1.5rem;
       font-weight: bold;
       /* color: blue; */
       display: inline;
     }
+
+    .c-popup .c-content .c-Type {
+        font-weight: 400;
+    }
+
   
-    .ImageContainer {
+    .c-ImageContainer {
       display: flex;
-      border-radius: 60px;
-      height: 150px;
-      width: 354px;
+      border-radius: 3.75rem;
+      height: 9.375rem;
+      width: 22.125rem;
       background-color: #EB4848;
-      border: solid 3px white;
+      border: solid .1875rem white;
     }
   
-    .cover {
+    .c-cover {
       object-fit: contain;
-      height: 150px;
-      width: 354px;
+      height: 9.375rem;
+      width: 22.125rem;
     }
 
     .c-cards {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: auto;
-        grid-gap: 20px;
+        grid-gap: 1.25rem;
         margin: auto;
-        padding: 20px;
+        padding: 1.25rem;
         min-width: 100%;
     }
 
@@ -309,19 +325,19 @@ body {
     background-attachment: fixed;
 }
 
-.box {
+.c-box {
     width: 40%;
     margin: 0 auto;
     background: rgba(255,255,255,0.2);
-    padding: 35px;
-    border: 2px solid #fff;
-    border-radius: 20px/50px;
+    padding: 2.1875rem;
+    border: .125rem solid #fff;
+    border-radius: 1.25rem/3.125rem;
     background-clip: padding-box;
     text-align: center;
   }
   
 
-  .overlay {
+  .c-overlay {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -332,77 +348,74 @@ body {
     visibility: hidden;
     opacity: 0;
   }
-  .overlay:target {
+  .c-overlay:target {
     visibility: visible;
     opacity: 1;
   }
   
-  .popup {
-    margin: 70px auto;
-    padding: 20px;
+  .c-popup {
+    margin: 4.375rem auto;
+    padding: 1.25rem;
     background: #fff;
-    border-radius: 5px;
+    border-radius: .3125rem;
     width: 30%;
     position: relative;
     transition: all 5s ease-in-out;
     display: flex;
     align-items: center;
     flex-direction: column;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 .25rem .5rem 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    border-radius: 75px;
+    border-radius: 4.6875rem;
     background: linear-gradient(#EB4848 30%, white 70%);
     height: 45rem;
     width: 45rem;
     border-color: #28333A;
-    border: solid 1px;
+    border: solid .0625rem;
     gap: 2.5rem;
   }
   
-  .popup .ImageContainer {
+  .c-popup .c-ImageContainer {
     display: flex;
     flex-direction: column;
     border-radius: 3.75rem;
-    height: 9.375rem; 
-    width: 22.125rem;
+    height: 15rem; 
+    width: 28rem;
     background-color: #EB4848;
-    border: solid #EB4848;
+    border: solid .1875rem white;
    
   }
 
-  .popup .cover {
+  .c-popup .c-cover {
     object-fit: contain;
     height: 12.5rem;
     width: 25rem;
   }
 
-  .popup h2 {
-    margin-top: 0;
-    color: #333;
-    font-family: Tahoma, Arial, sans-serif;
-  }
-  .popup .close {
+  .c-popup .c-close {
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 1.25rem;
+    right: 1.875rem;
     transition: all 200ms;
-    font-size: 30px;
+    font-size: 1.875rem;
     font-weight: bold;
     text-decoration: none;
     color: #333;
   }
-  .popup .close:hover {
+  .c-popup .c-close:hover {
     color: white;
   }
-  .popup .content {
+  .c-popup .c-content {
     max-height: 30%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    grid-gap: 20px;
-    margin: auto;
-    padding: 20px;
+    grid-gap: 1.25rem;
+    margin-top: 1.5rem;
+    padding: 1.25rem;
     min-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   @media screen and (max-width: 700px){

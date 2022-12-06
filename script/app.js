@@ -7,19 +7,23 @@ const showPokemon = function (jsonObject) {
         console.info(jsonObject);
         let htmlstring = "";
         for (let card of jsonObject.pokemon) {
-            htmlstring += `<div class="card">
-            <div class="ImageContainer">
-          <img src="${card.img}" alt="picture of ${card.name}" class="cover">
+            htmlstring += `<div class="c-card">
+            <div class="c-ImageContainer">
+          <img src="${card.img}" alt="picture of ${card.name}" class="c-cover">
             </div>
-            <div class="content">
+            <div class="c-content">
               <h1>${card.name}</h1>
-              <h2>Type: <p class="Type" id="${card.id}">${card.type}</p></h2>
+              <h2>Type: <p class="c-Type" id="${card.id}">${card.type}</p></h2>
             </div>
         </div> `;
     }
         document.querySelector(".js-cards").innerHTML = htmlstring;
 
         for (let card of jsonObject.pokemon) {
+
+            if (card.type.includes("Ground")) {
+                document.getElementById(card.id).style.color = "#D35400";
+            }
 
             if (card.type.includes("Psychic")) {
                 document.getElementById(card.id).style.color = "#DC71CA";
@@ -39,10 +43,6 @@ const showPokemon = function (jsonObject) {
             
             if (card.type.includes("Water")) {
                 document.getElementById(card.id).style.color = "#18A8E8";
-            }
-
-            if (card.type.includes("Ground")) {
-                document.getElementById(card.id).style.color = "#D35400";
             }
 
             if (card.type.includes("Flying")) {
@@ -100,7 +100,7 @@ const showPokemon = function (jsonObject) {
 };
 
 const ListenToCardClick = function (jsonObject) {
-    const cards = document.querySelectorAll(".card");
+    const cards = document.querySelectorAll(".c-card");
     for (const card of cards) {
         card.addEventListener("click", function () {
             console.log("clicked"); 
@@ -108,22 +108,82 @@ const ListenToCardClick = function (jsonObject) {
             let htmlstring = "";
             for (let pokemon of jsonObject.pokemon) {
             if (pokemon.id == card.querySelector("p").id){
-                 htmlstring += `<a class="close" href="#">&times;</a>
-                 <div class="ImageContainer">
-               <img src="${pokemon.img}" alt="picture of ${pokemon.name}" class="cover">
+                let spawnchance = parseFloat(pokemon.spawn_chance) * 100;
+                 htmlstring += `<a class="c-close" href="#">&times;</a>
+                 <div class="c-ImageContainer">
+               <img src="${pokemon.img}" alt="picture of ${pokemon.name}" class="c-cover">
                  </div>
-                 <div class="content">
-                   <h4>Name: ${pokemon.name}</h4>
-                   <h4>Type: <p class="Type" id="js-type ${pokemon.id}">${pokemon.type}</p></h4>
-                   <h4>Weight: ${pokemon.weight}</h4>
-                   <h4>Height: ${pokemon.height}</h4>
-                   <h4>Weaknesses: ${pokemon.weaknesses}</h4>
+                 <div class="c-content">
+                   <h4><p class="c-content__title">Name:</p>${pokemon.name}</h4>
+                   <h4><p class="c-content__title">Type:</p><p class="c-Type" id="js-type ${pokemon.id}">${pokemon.type}</p></h4>
+                   <h4><p class="c-content__title">Weaknesses:</p>${pokemon.weaknesses}</h4>
+                   <h4><p class="c-content__title">Spawn Chance:</p>${spawnchance.toFixed(2)}%</h4>
+                   <div id="gauge"></div>
+                   <div id="gauge2"></div>
                  </div>`;
+                 document.querySelector(".js-popup").innerHTML = htmlstring;
+                document.location.href = '#popup1';
+                let weight = pokemon.weight.slice(0, -3);
+                let height = pokemon.height.slice(0, -2);
+                console.log(height)
+                GraphWeight(parseInt(weight));
+                GraphHeight(parseFloat(height));
             }
     }
-    document.querySelector(".js-popup").innerHTML = htmlstring;
-    document.location.href = '#popup1';
+
         })}};
+
+        const GraphWeight = function (weight) {
+            var gauge = new JustGage({
+                id: "gauge", // required
+                value: weight,
+                min: 0,
+                max: 200,
+                title: "Weight",
+                label: "Weight",
+                levelColors: [
+                    "#ff0000",
+                    "#f9c802",
+                    "#a9d70b"
+                ],
+                gaugeWidthScale: 0.6,
+                counter: true,
+                width: 150,
+                height: 100,
+                symbol: "kg",
+                humanFriendly: false,
+                humanFriendlyDecimal: 2,
+                valueFontFamily: "#28333A",
+                labelFontColor: "#28333A",
+                valueFontColor: "#28333A",
+            });    
+        };
+
+        const GraphHeight = function (height) {
+            var gauge = new JustGage({
+                id: "gauge2", // required
+                value: height,
+                min: 0,
+                max: 6,
+                title: "Height",
+                label: "Height",
+                levelColors: [
+                    "#ff0000",
+                    "#f9c802",
+                    "#a9d70b"
+                ],
+                gaugeWidthScale: 0.6,
+                counter: true,
+                width: 150,
+                height: 100,
+                symbol: "m",
+                decimals: 2,
+                valueFontFamily: "#28333A",
+                labelFontColor: "#28333A",
+                valueFontColor: "#28333A",
+            });    
+        };
+
 
 
 // #endregion
@@ -144,3 +204,5 @@ const ListenToCardClick = function (jsonObject) {
   document.addEventListener('DOMContentLoaded', function () {
     getAPI()
   })
+
+  

@@ -4,39 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/assets/pokeball.png">
     <link rel="stylesheet" href="style/screen.css">
+    <script src="raphael.min.js"></script>
+    <script src="justgage.js"></script>
     <script src="script/app.js"></script>
 
-    <title>Pokemon</title>
+    <title>Pokémon GO Pokédex</title>
 </head>
 <body>
-  <div class="js-cards c-cards">
-    <div class="card">
-        <div class="ImageContainer">
-      <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png" alt="" class="cover">
+  <div id="popup1" class="c-overlay">
+    <div class="c-popup js-popup">
+        <a class="c-close" href="#">&times;</a>
+        <div class="c-ImageContainer">
+      <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png" alt="" class="c-cover">
         </div>
-        <div class="content">
+        <div class="c-content">
+          <h3>Charmander</h3>
+          <h3>Type: <p class="c-Type" id="js-type">Fire</p></h3>
+          <div id="gauge"></div>
+          <h3>height</h3>
+          <h3>weaknesses</h3>
+        </div>
+    </div> 
+    </div>
+
+  <div class="js-cards c-cards">
+    <div class="c-card">
+        <div class="c-ImageContainer">
+      <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png" alt="" class="c-cover">
+        </div>
+        <div class="c-content">
           <h1>Charmander</h1>
-          <h2>Type: <p class="Type" id="js-type">Fire</p></h2>
+          <h2>Type: <p class="c-Type" id="js-type">Fire</p></h2>
         </div>
     </div>  
 </div>
 
-<div id="popup1" class="overlay">
-	<div class="popup js-popup">
-      <a class="close" href="#">&times;</a>
-      <div class="ImageContainer">
-    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png" alt="" class="cover">
-      </div>
-      <div class="content">
-        <h3>Charmander</h3>
-        <h3>Type: <p class="Type" id="js-type">Fire</p></h3>
-        <h3>weight</h3>
-        <h3>height</h3>
-        <h3>weaknesses</h3>
-      </div>
-  </div> 
-	</div>
 </body>
 </html>
 
