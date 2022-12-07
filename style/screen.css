@@ -253,6 +253,8 @@ input::placeholder {
       border-color: var(--color-front);
       border: solid .0625rem;
       gap: 2.5rem;
+      margin-left: auto;
+        margin-right: auto;
     }
 
     .c-card:hover {
@@ -317,7 +319,29 @@ input::placeholder {
         margin: auto;
         padding: 1.25rem;
         min-width: 100%;
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
     }
+
+    .c-ImageContainer {
+      display: flex;
+      border-radius: 3.75rem;
+      height: 6.375rem;
+      width: 17.125rem;
+      background-color: #EB4848;
+      border: solid .1875rem white;
+      margin-top: 2.5rem;
+    }
+
+    .c-cover {
+      object-fit: contain;
+      height: 6.375rem;
+      width: 17.125rem;
+    }
+    
+
 
 body {
     background-image: url("/assets/Background.png");
@@ -445,6 +469,193 @@ body {
 /*------------------------------------*\
 #MEDIA
 \*------------------------------------*/
+
+@media only screen and (max-width: 1500px) {
+        .c-cards {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto;
+            grid-gap: 1.25rem;
+            margin: auto;
+            padding: 1.25rem;
+            min-width: 100%;
+        }
+
+        .c-popup {
+    margin: 3.375rem auto;
+    padding: 1.25rem;
+    background: #fff;
+    border-radius: .3125rem;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 .25rem .5rem 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 4.6875rem;
+    background: linear-gradient(#EB4848 30%, white 70%);
+    height: 40rem;
+    width: 40rem;
+    border-color: #28333A;
+    border: solid .0625rem;
+    gap: 2.5rem;
+  }
+
+  .c-popup .c-ImageContainer {
+    display: flex;
+    flex-direction: column;
+    border-radius: 3.75rem;
+    height: 12rem; 
+    width: 24rem;
+    background-color: #EB4848;
+    border: solid .1875rem white;
+   
+  }
+
+  .c-popup .c-cover {
+    object-fit: contain;
+    height: 12rem;
+    width: 24rem;
+  }
+    }
+
+    @media only screen and (max-width: 1300px) {
+        .c-cards {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            grid-gap: 1.25rem;
+            margin: auto;
+            padding: 1.25rem;
+            min-width: 100%;
+        }
+
+        .c-popup {
+    margin: 3.375rem auto;
+    padding: 1.25rem;
+    background: #fff;
+    border-radius: .3125rem;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 .25rem .5rem 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 4.6875rem;
+    background: linear-gradient(#EB4848 30%, white 70%);
+    height: 40rem;
+    width: 40rem;
+    border-color: #28333A;
+    border: solid .0625rem;
+    gap: 2.5rem;
+  }
+
+  .c-popup .c-ImageContainer {
+    display: flex;
+    flex-direction: column;
+    border-radius: 3.75rem;
+    height: 12.5rem; 
+    width: 25rem;
+    background-color: #EB4848;
+    border: solid .1875rem white;
+   
+  }
+
+  .c-popup .c-cover {
+    object-fit: contain;
+    height: 12.5rem;
+    width: 25rem;
+  }
+    }
+
+    @media only screen and (max-width: 875px) {
+        .c-cards {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-gap: 1.25rem;
+            margin: auto;
+            padding: 1.25rem;
+            min-width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .c-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        box-shadow: 0 0.25rem .5rem 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 4.6875rem;
+        background: linear-gradient(var(--color-red) 50%, white 50%);
+        height: 20rem;
+        width: 20rem;
+        border-color: var(--color-front);
+        border: solid .0625rem;
+        gap: 2rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .c-ImageContainer {
+      display: flex;
+      border-radius: 3.75rem;
+      height: 6.375rem;
+      width: 17.125rem;
+      background-color: #EB4848;
+      border: solid .1875rem white;
+      margin-top: 2.5rem;
+    }
+
+    .c-cover {
+      object-fit: contain;
+      height: 6.375rem;
+      width: 17.125rem;
+    }
+
+    .c-popup {
+    margin: 2.375rem auto;
+    padding: 1.25rem;
+    background: #fff;
+    border-radius: .3125rem;
+    width: 20%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 .25rem .5rem 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 4.6875rem;
+    background: linear-gradient(#EB4848 30%, white 70%);
+    height: 35rem;
+    width: 35rem;
+    border-color: #28333A;
+    border: solid .0625rem;
+    gap: 2.5rem;
+  }
+
+  .c-popup .c-ImageContainer {
+    display: flex;
+    flex-direction: column;
+    border-radius: 3.75rem;
+    height: 10rem; 
+    width: 20rem;
+    background-color: #EB4848;
+    border: solid .1875rem white;
+   
+  }
+
+  .c-popup .c-cover {
+    object-fit: contain;
+    height: 10rem;
+    width: 20rem;
+  }
+    }
+
 
 /*
     Print styles.
