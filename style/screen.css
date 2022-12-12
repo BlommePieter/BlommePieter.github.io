@@ -262,7 +262,7 @@ input::placeholder {
     }
 
     .c-card:focus {
-      box-shadow: 0 1rem 2rem 0 rgba(90,87,87,0.8);
+      background-color: blue;
     }
   
     .c-content {
