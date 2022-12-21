@@ -1,2 +1,0 @@
-# eindopdracht-interaction-design
-hola
