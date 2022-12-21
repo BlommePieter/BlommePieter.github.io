@@ -287,7 +287,6 @@ input::placeholder {
     .c-Type {
       font-size: 1.5rem;
       font-weight: bold;
-      /* color: blue; */
       display: inline;
     }
 
@@ -495,7 +494,7 @@ body {
     transition: 0.3s;
     border-radius: 4.6875rem;
     background: linear-gradient(#EB4848 30%, white 70%);
-    height: 40rem;
+    height: 45rem;
     width: 40rem;
     border-color: #28333A;
     border: solid .0625rem;
@@ -545,7 +544,7 @@ body {
     transition: 0.3s;
     border-radius: 4.6875rem;
     background: linear-gradient(#EB4848 30%, white 70%);
-    height: 40rem;
+    height: 45rem;
     width: 40rem;
     border-color: #28333A;
     border: solid .0625rem;
@@ -631,8 +630,8 @@ body {
     transition: 0.3s;
     border-radius: 4.6875rem;
     background: linear-gradient(#EB4848 30%, white 70%);
-    height: 35rem;
-    width: 35rem;
+    height: 30rem;
+    width: 30rem;
     border-color: #28333A;
     border: solid .0625rem;
     gap: 2.5rem;
@@ -642,18 +641,42 @@ body {
     display: flex;
     flex-direction: column;
     border-radius: 3.75rem;
-    height: 10rem; 
-    width: 20rem;
+    height: 7.5rem; 
+    width: 18rem;
     background-color: #EB4848;
     border: solid .1875rem white;
+    margin-bottom: 0;
    
   }
 
   .c-popup .c-cover {
     object-fit: contain;
-    height: 10rem;
-    width: 20rem;
+    height: 7.5rem;
+    width: 18rem;
   }
+
+  h3 {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0 0 16px;
+}
+
+.c-content__title{
+        margin-bottom: 0;
+        font-size: 0.5rem;
+        font-weight: 600;
+        line-height: 1rem;
+    }
+
+    .c-popup .c-content {
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    h4 {
+      margin-bottom: 0;
+    }
+
     }
 
 
