@@ -7,7 +7,7 @@ const showPokemon = function (jsonObject) {
         console.info(jsonObject);
         let htmlstring = "";
         for (let card of jsonObject.pokemon) {
-            htmlstring += `<div class="c-card" tabindex="0">
+            htmlstring += `<div class="c-card" tabindex="0" id="card${card.id}">
             <div class="c-ImageContainer">
           <img src="${card.img}" alt="picture of ${card.name}" class="c-cover">
             </div>
@@ -110,7 +110,7 @@ const ListenToCardClick = function (jsonObject) {
             for (let pokemon of jsonObject.pokemon) {
                 if (pokemon.id == card.querySelector("p").id) {
                     let spawnchance = parseFloat(pokemon.spawn_chance) * 100;
-                    htmlstring += `<a class="c-close" href="#${card.querySelector("p").id}">&times;</a>
+                    htmlstring += `<a class="c-close" href="#card${pokemon.id}">&times;</a>
                  <div class="c-ImageContainer">
                <img src="${pokemon.img}" alt="picture of ${pokemon.name}" class="c-cover">
                  </div>
@@ -146,7 +146,7 @@ const ListenToCardEnter = function (jsonObject) {
                 for (let pokemon of jsonObject.pokemon) {
                     if (pokemon.id == card.querySelector("p").id) {
                         let spawnchance = parseFloat(pokemon.spawn_chance) * 100;
-                        htmlstring += `<a class="c-close" href="#${card.querySelector("p").id}">&times;</a>
+                        htmlstring += `<a class="c-close" href="#card${pokemon.id}">&times;</a>
                  <div class="c-ImageContainer">
                <img src="${pokemon.img}" alt="picture of ${pokemon.name}" class="c-cover">
                  </div>
